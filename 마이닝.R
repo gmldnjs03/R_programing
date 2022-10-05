@@ -1,0 +1,20 @@
+install.packages("rpart")
+library(rpart)
+data("iris")
+head(iris)
+str(iris)
+c <- rpart(Species~., data = iris)
+c
+plot(c, compess = T, margin = 0.3 )
+text(c, cex = 1.5)
+pc <- predict(c, newdata = iris, type = "class")
+summary(pc)
+table(pc,, iris$Species, dnn = c("Actual", "Predicted"))
+mean(iris$Species==pc)
+library(rpart.plot)
+prp(c, type = 4, extra = 2)
+c$cptable
+bc <- rpart(Species~., data = iris, cp=0.01)
+bc$cptable
+table(pbc, iris$Species, dnn = c("Actual", "Predicted"))
+mean(iris$Species==pbc)
