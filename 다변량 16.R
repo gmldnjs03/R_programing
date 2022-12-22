@@ -1,0 +1,21 @@
+attach(trees)
+trees
+str(trees)
+mean(Grith)
+mean(Height)
+mean(Volume)
+boxplot(Volume)
+sort(Volume)
+fivenum(Volume)
+quantile(Volume)
+IQR(Volume)
+Q0<-fivenum(Volume)[2]-1.5*IQR(Volume)
+Q0
+Q5<-fivenum(Volume)[4]+1.5*IQR(Volume)
+Q5
+upper_outlier<-Volume[which(Volume>Q5)]
+upper_outlier
+lower_outlier<-Volume[which(Volume<Q0)]
+lower_outlier
+upper_outlier2<-boxplot.stats(Volume,do.out = T)
+upper_outlier2
